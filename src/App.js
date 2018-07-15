@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Maps from "./Map.js";
 
+import * as dataCastles from "./locations.js"
+
 class App extends Component {
   render() {
     return (
