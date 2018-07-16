@@ -9,13 +9,16 @@ html, html * {
 }
 
 
-
+ul {
+  list-style-type: none;
+  font-size: 15px;
+  
+}
 .mapa {
   position: absolute;
   right: 0px;
   bottom: 0px;
   margin-left: 50px;
-  
   
 }
 
@@ -27,9 +30,13 @@ html, html * {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   color: blueviolet;
   background-color: azure;
   padding: 15px;
 }
+input {
+  width: 70%;
+  height: 30px;
+ } 

@@ -9,14 +9,24 @@ class CastleList extends Component {
   }
   
 render() {
+   
+
     return (
       <div id = "list-bar">
-       
-      <p>Tu bude zoznam zamkov</p> 
+        <ul> {this.props.locations.map(location =>
+              <li key={location.id}>
+                  {location.title}
+              </li>
+             
+              )
+          
+}
+        </ul>
+        <p>pokus</p>
       </div>
 );
     
-                  
+              
                 
       
       
