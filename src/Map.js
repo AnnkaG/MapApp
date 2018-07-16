@@ -11,8 +11,9 @@ export class GoogleMap extends Component {
   
   render() {
     const styles = {
-      width: '100%',
-      height: '100%'
+      width: '75%',
+      height: '100%',
+          
     };
   
     return (
@@ -21,13 +22,13 @@ export class GoogleMap extends Component {
         zoom =  {8}
         style = {styles}
         initialCenter = {{
-                  lat: 60.15,
-                  lng: 25.11
+                  lat: 48.73946,
+                  lng: 19.55349
         }}
       >
       </Map>
     );
- 
+
       }}
 
 export default GoogleApiWrapper({
