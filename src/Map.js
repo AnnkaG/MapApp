@@ -16,7 +16,7 @@ export class GoogleMap extends Component {
   
   render() {
     const styles = {
-      width: '75%',
+      width: '80%',
       height: '100%',
           
     };
@@ -38,7 +38,7 @@ export class GoogleMap extends Component {
             key = {location.id}
             title = {location.title}
             position = {location.location}
-            animation = {(currentMarker === location.title)&& this.props.google.maps.Animation.DROP}
+            animation = {this.props.google.maps.Animation.DROP}
           />
         )}
       </Map>
