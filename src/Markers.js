@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CastleList extends Component {
+class Marker extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,4 +34,4 @@ render() {
   }
 }
 
-export default CastleList;
+export default Marker;

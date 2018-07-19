@@ -3,7 +3,12 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 export class GoogleMap extends Component {
   
-    
+    constructor(props) {
+      super(props);
+      this.state = {
+        activeMarker:{}
+      };
+    }
 
   
   
@@ -15,7 +20,9 @@ export class GoogleMap extends Component {
       height: '100%',
           
     };
-  
+    const { locations, currentMarker} = this.props;
+    const { activeMarker} = this.state;
+           
     return (
       <Map
         google = {this.props.google }
@@ -26,6 +33,14 @@ export class GoogleMap extends Component {
                   lng: 19.55349
         }}
       >
+      {locations.map(location =>
+          <Marker
+            key = {location.id}
+            title = {location.title}
+            position = {location.location}
+            animation = {(currentMarker === location.title)&& this.props.google.maps.Animation.DROP}
+          />
+        )}
       </Map>
     );
 
