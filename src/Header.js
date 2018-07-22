@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Header extends Component {
- 
   
-render() {
-    return (
-     
-       
+  render() {
+      return (
         <h1>Slovak Castles</h1> 
-      
-);
-    
- 
+      );
   }
 }
 
