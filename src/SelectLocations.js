@@ -104,7 +104,6 @@ class SelectLocations extends Component {
 					{
 						selectedLocations.map(location => (
 							<li
-								role="button"
 								className="castle-button"
 								key={location.id}
 							>
