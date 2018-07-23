@@ -77,7 +77,24 @@ class SelectLocations extends Component {
 			selectedMarker.id === marker.id && marker.setVisible(true)
 		)
 	}
-
+   updateClicked = (location) => {
+       let controlledThis = this;
+      console.log("som tu");
+        this.getCurrentMarker(location);
+     console.log("ano");
+        setTimeout(function(){
+		controlledThis.props.openWikiInfo(controlledThis.state.currentMarker);
+		},1 )
+	}  
+    getCurrentMarker = (location) => {
+      this.state.selectedMarkers.map(selectedMarker =>
+              selectedMarker.id === location.id &&
+                    this.setState({
+                        currentMarker: selectedMarker
+                    })
+         ); console.log("mam current marker");
+      }
+    
 	render () {
 		const { query, selectedLocations} = this.state;
 
@@ -106,6 +123,9 @@ class SelectLocations extends Component {
 							<li
 								className="castle-li"
 								key={location.id}
+                                role = "button"
+                                onClick={() => this.updateClicked(location) }
+                                onKeyPress={() => this.updateClicked(location) }
 							>
 								{location.title}
 							</li>

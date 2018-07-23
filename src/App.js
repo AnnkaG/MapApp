@@ -118,6 +118,7 @@ class App extends Component {
         <SelectLocations
           castleList={this.state.locations}
           markers={this.state.markers}
+          openWikiInfo= {this.openWikiInfo}
         />
 
         {
