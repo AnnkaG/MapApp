@@ -78,21 +78,21 @@ class SelectLocations extends Component {
 		)
 	}
    updateClicked = (location) => {
-       let controlledThis = this;
-      console.log("som tu");
-        this.getCurrentMarker(location);
-     console.log("ano");
+       let This = this;
+      
+        this.getClickedMarker(location);
+     
         setTimeout(function(){
-		controlledThis.props.openWikiInfo(controlledThis.state.currentMarker);
+		This.props.openWikiInfo(This.state.currentMarker);
 		},1 )
 	}  
-    getCurrentMarker = (location) => {
+    getClickedMarker = (location) => {
       this.state.selectedMarkers.map(selectedMarker =>
               selectedMarker.id === location.id &&
                     this.setState({
                         currentMarker: selectedMarker
                     })
-         ); console.log("mam current marker");
+         ); 
       }
     
 	render () {
