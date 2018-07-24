@@ -112,12 +112,12 @@ class SelectLocations extends Component {
 						value={query}
 						onChange={(e) => 
 							this.updateQuery(e.target.value)}
-                        aria-labelledby="filtering box"
+                        aria-label="filtering box"
 					 />
 				</form>
 
 				{
-					<ul className="castles">
+					<ul className="castles" aria-label= "castle locations">
 					{
 						selectedLocations.map(location => (
 							<li

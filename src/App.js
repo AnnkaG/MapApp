@@ -114,7 +114,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header className = "header" />
+        <Header className = "header" aria-label = "application header" />
         <SelectLocations
           castleList={this.state.locations}
           markers={this.state.markers}
