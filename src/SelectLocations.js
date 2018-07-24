@@ -96,12 +96,13 @@ class SelectLocations extends Component {
                     })
          ); 
       }
-   
+  
+    // Animates Marker on list button click
     changeMarker = (location) =>  {
       this.state.selectedMarkers.map(selectedMarker =>
           selectedMarker.id === location.id && 
-            selectedMarker.setAnimation(window.google.maps.Animation.BOUNCE)
-            );
+            selectedMarker.setAnimation
+                  (window.google.maps.Animation.BOUNCE)            );
       this.state.selectedMarkers.map(selectedMarker =>
           selectedMarker.id === location.id && 
             selectedMarker.setAnimation(null)
@@ -140,6 +141,7 @@ class SelectLocations extends Component {
                                 role = "button"
                                 onClick={() => this.updateClicked(location) }
                                 onKeyPress={() => this.updateClicked(location) }
+                                tabIndex = {0}
 							>
 								{location.title}
 							</li>
