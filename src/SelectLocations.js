@@ -79,13 +79,15 @@ class SelectLocations extends Component {
 	}
    updateClicked = (location) => {
        let This = this;
-      
+        this.changeMarker(location); 
         this.getClickedMarker(location);
-     
+        console.log("a tu");
         setTimeout(function(){
 		This.props.openWikiInfo(This.state.currentMarker);
+        
 		},1 )
 	}  
+   
     getClickedMarker = (location) => {
       this.state.selectedMarkers.map(selectedMarker =>
               selectedMarker.id === location.id &&
@@ -94,6 +96,18 @@ class SelectLocations extends Component {
                     })
          ); 
       }
+   
+    changeMarker = (location) =>  {
+      this.state.selectedMarkers.map(selectedMarker =>
+          selectedMarker.id === location.id && 
+            selectedMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+            );
+      this.state.selectedMarkers.map(selectedMarker =>
+          selectedMarker.id === location.id && 
+            selectedMarker.setAnimation(null)
+          );
+ }
+   
     
 	render () {
 		const { query, selectedLocations} = this.state;
