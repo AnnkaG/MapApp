@@ -5,7 +5,8 @@ function InfoWindow(props) {
 
 	return (
 		<div 
-			className="wiki-info"
+		    tabIndex = {0}
+            className="wiki-info"
 		>
 			<h2>{selectedMarker.title}</h2>
 			<div className = "content">

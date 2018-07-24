@@ -81,11 +81,9 @@ class SelectLocations extends Component {
        let This = this;
         this.changeMarker(location); 
         this.getClickedMarker(location);
-        console.log("a tu");
         setTimeout(function(){
 		This.props.openWikiInfo(This.state.currentMarker);
-        
-		},1 )
+        },1 )
 	}  
    
     getClickedMarker = (location) => {
@@ -100,9 +98,7 @@ class SelectLocations extends Component {
     // Animates Marker on list button click
     changeMarker = (location) =>  {
       this.state.selectedMarkers.map(selectedMarker =>
-          selectedMarker.id === location.id && 
-            selectedMarker.setAnimation
-                  (window.google.maps.Animation.BOUNCE)            );
+          selectedMarker.id === location.id &&              selectedMarker.setAnimation(window.google.maps.Animation.BOUNCE));                      
       this.state.selectedMarkers.map(selectedMarker =>
           selectedMarker.id === location.id && 
             selectedMarker.setAnimation(null)
