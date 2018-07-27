@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   loadMap = () => {
-    let This = this;
+    let self = this;
     const { locations, markers } = this.state;
 
   // Create new map with given coordinates
@@ -58,12 +58,12 @@ class App extends Component {
    // Listeners for marker cliks - open close   
       // Open
       marker.addListener('click', function () {
-        This.openWikiInfo(marker);
+        self.openWikiInfo(marker);
       });
     }
       // Close
       map.addListener('click', function () {
-      This.closeWikiInfo();
+      self.closeWikiInfo();
      });
   }
 
@@ -84,7 +84,7 @@ class App extends Component {
   }
 
   getWikiInfo= (marker) => {
-    let This = this;
+    let self = this;
     let castle = marker.title;
     let url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' +
     castle;
@@ -100,12 +100,12 @@ class App extends Component {
         let pageContent = pages[pageId].extract;
 
         // Update state with retreived content
-          This.setState({
+          self.setState({
           content: pageContent
         });
       }).catch(function (err) {
         let errMessage = 'Error occurred' + err;
-        This.setState({
+        self.setState({
           content: errMessage
         });
       })
