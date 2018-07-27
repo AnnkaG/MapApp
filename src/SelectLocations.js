@@ -78,11 +78,11 @@ class SelectLocations extends Component {
 		)
 	}
    updateClicked = (location) => {
-       let This = this;
+       let self = this;
         this.changeMarker(location); 
         this.getClickedMarker(location);
         setTimeout(function(){
-		This.props.openWikiInfo(This.state.currentMarker);
+		self.props.openWikiInfo(self.state.currentMarker);
         },1 )
 	}  
    
